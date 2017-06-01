@@ -1,0 +1,58 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             mycode , code, readonly
+    2 00000000                 entry
+    3 00000000         
+    4 00000000 E3A00005        ldr              r0, = 2_101 ; inpput 
+    5 00000004 E3A01000        mov              r1 , #0     ; step value 
+    6 00000008 E3A02000        mov              r2 , #0     ; accumulator 
+    7 0000000C E3500000 
+                       loop    cmp              r0, #0
+    8 00000010 0A000002        beq              stop
+    9 00000014 E1B000A0        movs             r0, r0 , lsr #1 ; logic shift r
+                                                            ight 
+   10 00000018 E0A22001        adc              r2, r2, r1
+   11 0000001C EBFFFFFA        bl               loop
+   12 00000020 EAFFFFFE 
+                       stop    b                stop
+   13 00000024                 end
+Command Line: --debug --xref --apcs=interwork --depend=bit.d -obit.o -IC:\Keil\
+ARM\CMSIS\Include -IC:\Keil\ARM\INC\Philips --predefine="__EVAL SETA 1" --list=
+bit.lst bit.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 7 in file bit.s
+   Uses
+      At line 11 in file bit.s
+Comment: loop used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 1 in file bit.s
+   Uses
+      None
+Comment: mycode unused
+stop 00000020
+
+Symbol: stop
+   Definitions
+      At line 12 in file bit.s
+   Uses
+      At line 8 in file bit.s
+      At line 12 in file bit.s
+
+3 symbols
+327 symbols in table

@@ -1,0 +1,2 @@
+Dependencies for Project 'bit', Target 'Target 1': (DO NOT MODIFY !)
+F (.\bit.s)(0x5930937C)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I "C:\Keil\ARM\CMSIS\Include" -I "C:\Keil\ARM\INC\Philips" --list "bit.lst" --xref -o "bit.o" --depend "bit.d")
